@@ -2,9 +2,9 @@ import Sequelize from 'sequelize';
 
 const dbOptions = {
   host: 'localhost',
-  username: '',
-  password: '',
-  database: '',
+  username: 'postgres',
+  password: 'postgres',
+  database: 'social-core',
   dialect: 'postgres'
 };
 

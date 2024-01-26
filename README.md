@@ -44,43 +44,48 @@ To run this project, you will need to add the following environment variables to
 #### Create user
 
 ```http
-  POST /api/items
+  POST /user
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
+| Parameter  | Type     | Description                    |
+| :--------- | :------- | :------------------------------|
+| `fullName` | `string` | **Required**. Full name user  |
+| `age`      | `number` | **Required**. Age user         |
+| `email`    | `string` | **Required**. Email user       |
+| `password` | `string` | **Required**. Password user    |
+
 
 #### Login
 
 ```http
-  POST /api/items/${id}
+  POST /login
 ```
 
-| Parameter | Type     | Description                       |
-| :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
+| Parameter | Type     | Description                  |
+| :-------- | :------- | :----------------------------|
+| `email`    | `string` | **Required**. Email user    |
+| `password` | `string` | **Required**. Password user |
 
 
 #### Get Posts
 
 ```http
-  GET /api/items/${id}
+  GET /posts
 ```
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
+| `userId`  | `string` | **Required**. Id of user to fetch |
 
 
 #### Create Posts
 
 ```http
-  POST /api/items/${id}
+  POST /posts
 ```
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
-
-
+| `userId`  | `string` | **Required**. Id of user to fetch |
+| `title`   | `string` | **Required**. Title of the post   |
+| `content` | `string` | **Required**. Content of the post |

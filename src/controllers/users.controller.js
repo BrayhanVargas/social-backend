@@ -51,11 +51,23 @@ export const createUser = async (req, res) => {
     res.status(500).json({ error: 'Error creating a new user' });
   }
 };
-// export const getUser = async (req, res) => {
-//   try {
-//     const users = await User.findAll();
-//   } catch (error) {
-//     console.error('Error getting users from db', error);
-//     res.status(500).json({ error: 'Error getting users from db' });
-//   }
-// };
+
+export const getUser = async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const user = await User.findOne({
+      where: {
+        id: userId
+      }
+    });
+
+    if (user) {
+      res..json({ user });
+    } else {
+      res.status(404).json({ error: 'User not found' });
+    }
+  } catch (error) {
+    console.error('Error getting user from db', error);
+    res.status(500).json({ error: 'Error getting user from db' });
+  }
+};
