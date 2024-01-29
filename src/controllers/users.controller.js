@@ -62,7 +62,7 @@ export const getUser = async (req, res) => {
     });
 
     if (user) {
-      res..json({ user });
+      res.json({ user });
     } else {
       res.status(404).json({ error: 'User not found' });
     }

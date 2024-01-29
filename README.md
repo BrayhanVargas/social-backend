@@ -1,4 +1,3 @@
-
 # Social Core Backend API
 
 This is the backend of a social application that allows users to register, log in, create and view posts, and connect with other users. Developed with Node.js, Express, and PostgreSQL.
@@ -13,12 +12,11 @@ Ensure Node.js and PostgreSQL are installed. Set up the database and adjust envi
 
     2. Install dependencies: npm install
 
-    3. Configure environment variables in a .env file. 
+    3. Configure environment variables in a .env file.
 
     4. Run the application: npm start
 
-
-##  Folder Structure
+## Folder Structure
 
 The project follows an organized structure inspired by the MVC (Model-View-Controller) architecture, enhancing maintainability and clarity. Key components are organized as follows:
 
@@ -29,7 +27,6 @@ The project follows an organized structure inspired by the MVC (Model-View-Contr
         /services: Services encapsulating application logic and shareable between controllers.
             /db: Service to db conection
 
-
 ## Environment Variables
 
 To run this project, you will need to add the following environment variables to your .env file
@@ -37,7 +34,6 @@ To run this project, you will need to add the following environment variables to
 `API_KEY`
 
 `ANOTHER_API_KEY`
-
 
 ## API Reference
 
@@ -47,13 +43,12 @@ To run this project, you will need to add the following environment variables to
   POST /user
 ```
 
-| Parameter  | Type     | Description                    |
-| :--------- | :------- | :------------------------------|
-| `fullName` | `string` | **Required**. Full name user  |
-| `age`      | `number` | **Required**. Age user         |
-| `email`    | `string` | **Required**. Email user       |
-| `password` | `string` | **Required**. Password user    |
-
+| Parameter  | Type     | Description                  |
+| :--------- | :------- | :--------------------------- |
+| `fullName` | `string` | **Required**. Full name user |
+| `age`      | `number` | **Required**. Age user       |
+| `email`    | `string` | **Required**. Email user     |
+| `password` | `string` | **Required**. Password user  |
 
 #### Login
 
@@ -61,11 +56,10 @@ To run this project, you will need to add the following environment variables to
   POST /login
 ```
 
-| Parameter | Type     | Description                  |
-| :-------- | :------- | :----------------------------|
+| Parameter  | Type     | Description                 |
+| :--------- | :------- | :-------------------------- |
 | `email`    | `string` | **Required**. Email user    |
 | `password` | `string` | **Required**. Password user |
-
 
 #### Get Posts
 
@@ -76,7 +70,6 @@ To run this project, you will need to add the following environment variables to
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `userId`  | `string` | **Required**. Id of user to fetch |
-
 
 #### Create Posts
 
