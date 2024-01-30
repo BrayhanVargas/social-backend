@@ -14,8 +14,8 @@ export const getPosts = async (req, res) => {
       res.status(401).json({ error: 'Invalid userId' });
     }
   } catch (error) {
-    console.error('Error getting users from db', error);
-    res.status(500).json({ error: 'Error getting users from db' });
+    console.error('Error getting posts from db', error);
+    res.status(500).json({ error: 'Error getting posts from db' });
   }
 };
 
