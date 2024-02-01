@@ -61,10 +61,16 @@ To run this project, you will need to add the following environment variables to
 | `email`    | `string` | **Required**. Email user    |
 | `password` | `string` | **Required**. Password user |
 
-#### Get Posts
+#### Get all Posts
 
 ```http
   GET /posts
+```
+
+#### Get Posts by id
+
+```http
+  GET /posts?userId
 ```
 
 | Parameter | Type     | Description                       |

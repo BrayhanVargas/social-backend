@@ -1,7 +1,8 @@
 import { Post } from '../models/posts.model.js';
 
-export const getPosts = async (req, res) => {
+export const getPostsById = async (req, res) => {
   try {
+    console.log('getPosts');
     const { userId } = req.query;
     const posts = await Post.findAll({
       where: {
@@ -15,6 +16,17 @@ export const getPosts = async (req, res) => {
     }
   } catch (error) {
     console.error('Error getting posts from db', error);
+    res.status(500).json({ error: 'Error getting posts from db' });
+  }
+};
+
+export const getAllPosts = async (req, res) => {
+  try {
+    console.log('getAllPosts');
+    const posts = await Post.findAll();
+    res.json({ posts });
+  } catch (error) {
+    console.error('Error getting all posts from db', error);
     res.status(500).json({ error: 'Error getting posts from db' });
   }
 };
