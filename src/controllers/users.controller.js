@@ -14,7 +14,11 @@ export const login = async (req, res) => {
 
     if (user) {
       const token = generateToken(user.id);
-      res.json({ token });
+      const data = {
+        ...user.toJSON(),
+        token
+      };
+      res.json(data);
     } else {
       res.status(401).json({ error: 'Invalid email or password' });
     }
